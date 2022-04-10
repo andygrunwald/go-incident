@@ -1,7 +1,6 @@
 # go-incident: Go client library for [Incident.io](https://incident.io/)
 
 [![GoDoc](https://img.shields.io/static/v1?label=godoc&message=reference&color=blue)](https://pkg.go.dev/github.com/andygrunwald/go-incident)
-[![Test Status](https://github.com/andygrunwald/go-incident/workflows/testing/badge.svg)](https://github.com/andygrunwald/go-incident/actions?query=workflow%3Atesting)
 
 Go client library for accessing the [Incident.io](https://incident.io/) [API](https://api-docs.incident.io/).
 
