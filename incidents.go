@@ -58,10 +58,10 @@ func (s *IncidentsService) Get(ctx context.Context, id string) (*IncidentRespons
 	return v, resp, nil
 }
 
-// CreateIncident creates a new incident.
+// Create creates a new incident.
 //
 // API docs: https://api-docs.incident.io/#operation/Incidents_Create
-func (s *IncidentsService) CreateIncident(ctx context.Context, incident *Incident) (*IncidentResponse, *Response, error) {
+func (s *IncidentsService) Create(ctx context.Context, incident *Incident) (*IncidentResponse, *Response, error) {
 	u := "incidents"
 	req, err := s.client.NewRequest("POST", u, incident)
 	if err != nil {
