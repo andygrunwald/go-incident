@@ -11,10 +11,10 @@ import (
 // API docs: https://api-docs.incident.io/#tag/Custom-Fields
 type CustomFieldsService service
 
-// ListCustomFields list all custom fields for an organisation.
+// List list all custom fields for an organisation.
 //
 // API docs: https://api-docs.incident.io/#operation/Custom%20Fields_List
-func (s *CustomFieldsService) ListCustomFields(ctx context.Context) (*CustomFieldsList, *Response, error) {
+func (s *CustomFieldsService) List(ctx context.Context) (*CustomFieldsList, *Response, error) {
 	u := "custom_fields"
 
 	req, err := s.client.NewRequest("GET", u, nil)
@@ -31,12 +31,12 @@ func (s *CustomFieldsService) ListCustomFields(ctx context.Context) (*CustomFiel
 	return v, resp, nil
 }
 
-// GetCustomField returns a single custom field.
+// Get returns a single custom field.
 //
 // id represents the unique identifier for the custom field
 //
 // API docs: https://api-docs.incident.io/#operation/Custom%20Fields_Show
-func (s *CustomFieldsService) GetCustomField(ctx context.Context, id string) (*CustomFieldResponse, *Response, error) {
+func (s *CustomFieldsService) Get(ctx context.Context, id string) (*CustomFieldResponse, *Response, error) {
 	u := fmt.Sprintf("custom_fields/%s", id)
 
 	req, err := s.client.NewRequest("GET", u, nil)

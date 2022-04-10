@@ -11,10 +11,10 @@ import (
 // API docs: https://api-docs.incident.io/#tag/Incidents
 type IncidentsService service
 
-// ListIncidents list all incidents for an organisation.
+// List list all incidents for an organisation.
 //
 // API docs: https://api-docs.incident.io/#operation/Incidents_List
-func (s *IncidentsService) ListIncidents(ctx context.Context, opts *IncidentsListOptions) (*IncidentsList, *Response, error) {
+func (s *IncidentsService) List(ctx context.Context, opts *IncidentsListOptions) (*IncidentsList, *Response, error) {
 	u := "incidents"
 	u, err := addOptions(u, opts)
 	if err != nil {
@@ -35,12 +35,12 @@ func (s *IncidentsService) ListIncidents(ctx context.Context, opts *IncidentsLis
 	return v, resp, nil
 }
 
-// GetIncident returns a single incident.
+// Get returns a single incident.
 //
 // id represents the unique identifier for the incident
 //
 // API docs: https://api-docs.incident.io/#operation/Incidents_Show
-func (s *IncidentsService) GetIncident(ctx context.Context, id string) (*IncidentResponse, *Response, error) {
+func (s *IncidentsService) Get(ctx context.Context, id string) (*IncidentResponse, *Response, error) {
 	u := fmt.Sprintf("incidents/%s", id)
 
 	req, err := s.client.NewRequest("GET", u, nil)

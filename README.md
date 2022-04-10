@@ -1,7 +1,6 @@
 # go-incident: Go client library for [Incident.io](https://incident.io/)
 
 [![GoDoc](https://img.shields.io/static/v1?label=godoc&message=reference&color=blue)](https://pkg.go.dev/github.com/andygrunwald/go-incident)
-[![Test Status](https://github.com/google/go-github/workflows/tests/badge.svg)](https://github.com/andygrunwald/go-incident/actions?query=workflow%3Atesting)
 
 Go client library for accessing the [Incident.io](https://incident.io/) [API](https://api-docs.incident.io/).
 
@@ -43,7 +42,7 @@ apiKey := "<my-secret-api-key>"
 client := incident.NewClient(apiKey, nil)
 
 // List all incidents for your organisation.
-incidents, response, err := c.Incidents.ListIncidents(context.Background(), nil)
+incidents, response, err := c.Incidents.List(context.Background(), nil)
 ```
 
 Some API methods have optional parameters that can be passed. For example:
@@ -59,7 +58,7 @@ opt := &incident.IncidentsListOptions{
         incident.IncidentStatusClosed,
     },
 }
-incidents, response, err := c.Incidents.ListIncidents(context.Background(), opt)
+incidents, response, err := c.Incidents.List(context.Background(), opt)
 ```
 
 The services of a client divide the API into logical chunks and correspond to the structure of the [Incident.io API](https://api-docs.incident.io/) documentation .
@@ -67,7 +66,7 @@ The services of a client divide the API into logical chunks and correspond to th
 NOTE: Using the [context](https://pkg.go.dev/context) package, one can easily pass cancelation signals and deadlines to various services of the client for handling a request.
 In case there is no context available, then `context.Background()` can be used as a starting point.
 
-For more sample code snippets, head over to the [example](https://github.com/google/go-github/tree/master/example) directory.
+For more sample code snippets, head over to the [example](https://github.com/andygrunwald/go-incident/tree/master/example) directory.
 
 ### Authentication
 
@@ -117,7 +116,7 @@ opt := &incident.IncidentsListOptions{
 // Get all pages of incidents
 var allIncidents []incident.Incident
 for {
-    incidents, _, err := client.Incidents.ListIncidents(context.Background(), opt)
+    incidents, _, err := client.Incidents.List(context.Background(), opt)
     if err != nil {
         panic(err)
     }
