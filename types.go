@@ -82,7 +82,7 @@ type Incident struct {
 	IncidentRoleAssignments []IncidentRoleAssignment `json:"incident_role_assignments"`
 
 	// Explanation of the incident
-	Name string `json:"name"`
+	Name string `json:"name,omitempty"`
 
 	// Description of the incident
 	PostmortemDocumentUrl string `json:"postmortem_document_url,omitempty"`
@@ -115,6 +115,15 @@ type Incident struct {
 
 	// Whether the incident is public or private
 	Visibility string `json:"visibility"`
+
+	//
+	// Values below only need to be set when an incident is being created
+	//
+
+	SeverityId string `json:"severity_id"`
+
+	// Unique string used to de-duplicate incident create requests
+	IdempotencyKey string `json:"idempotency_key"`
 }
 
 type IncidentsList struct {
@@ -138,6 +147,13 @@ type CustomFieldEntry struct {
 
 	// List of custom field values set on this entry
 	Values []CustomFieldValue `json:"values"`
+
+	//
+	// Values below only need to be set when an incident is being created
+	//
+
+	// ID of the custom field this entry is linked against
+	CustomFieldId string `json:"custom_field_id"`
 }
 
 type CustomFieldTypeInfo struct {
@@ -181,6 +197,16 @@ type CustomFieldValue struct {
 
 	// Text value
 	ValueText string `json:"value_text,omitempty"`
+
+	//
+	// Values below only need to be set when an incident is being created
+	//
+
+	// Unique identifier for the custom field value
+	Id string `json:"id,omitempty"`
+
+	// ID of the custom field option
+	ValueOptionId string `json:"value_option_id,omitempty"`
 }
 
 type IncidentRoleAssignment struct {
