@@ -56,13 +56,13 @@ const (
 // IncidentsListOptions defines parameters for IncidentsService.ListIncidents.
 type IncidentsListOptions struct {
 	// Number of records to return
-	PageSize int `json:"page_size,omitempty"`
+	PageSize int `url:"page_size,omitempty"`
 
 	// An incident's ID. This endpoint will return a list of incidents created after this incident.
-	After string `json:"after,omitempty"`
+	After string `url:"after,omitempty"`
 
 	// Filter for incidents in these statuses
-	Status []string `json:"status,omitempty"`
+	Status []string `url:"status,omitempty"`
 }
 
 type Incident struct {
@@ -334,13 +334,13 @@ type CustomFieldResponse struct {
 
 type ActionsListOptions struct {
 	// Find actions related to this incident
-	IncidentId string `json:"incident_id,omitempty"`
+	IncidentId string `url:"incident_id,omitempty"`
 
 	// Filter to actions marked as being follow up actions
-	IsFollowUp bool `json:"is_follow_up,omitempty"`
+	IsFollowUp bool `url:"is_follow_up,omitempty"`
 
 	// Don't return actions attached to test incidents
-	ExcludeTestIncidents bool `json:"exclude_test_incidents,omitempty"`
+	ExcludeTestIncidents bool `url:"exclude_test_incidents,omitempty"`
 }
 
 type ActionsList struct {
