@@ -85,7 +85,7 @@ client := incident.NewClient(apiKey, nil)
 
 ### Errors
 
-Errors provided by the Incident.io API will be mapped to the [ErrorResponse](TODO) type and can be investigated further:
+Errors provided by the Incident.io API will be mapped to the [ErrorResponse](https://pkg.go.dev/github.com/andygrunwald/go-incident#ErrorResponse) type and can be investigated further:
 
 ```go
 // Do a API call ...
@@ -104,7 +104,7 @@ See [Making requests > Errors in the Incident.ip API docs](https://api-docs.inci
 
 Some requests support pagination.
 Pagination options are described in the options per API call once supported.
-The returned data contains a [PaginationMeta](TODO) struct with paging information.
+The returned data contains a [PaginationMeta](https://pkg.go.dev/github.com/andygrunwald/go-incident#PaginationMeta) struct with paging information.
 
 ```go
 apiKey := "<my-secret-api-key>"
