@@ -13,7 +13,7 @@ func main() {
 	client := incident.NewClient(apiKey, nil)
 
 	// List actions
-	v, resp, err := client.Actions.ListActions(context.Background(), nil)
+	v, resp, err := client.Actions.List(context.Background(), nil)
 	if err != nil {
 		panic(err)
 	}
@@ -27,7 +27,7 @@ func main() {
 	fmt.Println("========================")
 
 	// Get a single action
-	v1, resp, err := client.Actions.GetAction(context.Background(), "<Actions-ID>")
+	v1, resp, err := client.Actions.Get(context.Background(), "<Actions-ID>")
 	if err != nil {
 		panic(err)
 	}

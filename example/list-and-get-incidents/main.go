@@ -13,7 +13,7 @@ func main() {
 	client := incident.NewClient(apiKey, nil)
 
 	// List incidents
-	v, resp, err := client.Incidents.ListIncidents(context.Background(), nil)
+	v, resp, err := client.Incidents.List(context.Background(), nil)
 	if err != nil {
 		panic(err)
 	}
@@ -27,7 +27,7 @@ func main() {
 	fmt.Println("========================")
 
 	// Get a single incident
-	v1, resp, err := client.Incidents.GetIncident(context.Background(), "<Incident-ID>")
+	v1, resp, err := client.Incidents.Get(context.Background(), "<Incident-ID>")
 	if err != nil {
 		panic(err)
 	}

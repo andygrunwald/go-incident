@@ -11,10 +11,10 @@ import (
 // API docs: https://api-docs.incident.io/#tag/Incident-Roles
 type IncidentRolesService service
 
-// ListIncidentRoles list all incident roles for an organisation.
+// List list all incident roles for an organisation.
 //
 // API docs: https://api-docs.incident.io/#operation/Incident%20Roles_List
-func (s *IncidentRolesService) ListIncidentRoles(ctx context.Context) (*IncidentRolesList, *Response, error) {
+func (s *IncidentRolesService) List(ctx context.Context) (*IncidentRolesList, *Response, error) {
 	u := "incident_roles"
 
 	req, err := s.client.NewRequest("GET", u, nil)
@@ -31,12 +31,12 @@ func (s *IncidentRolesService) ListIncidentRoles(ctx context.Context) (*Incident
 	return v, resp, nil
 }
 
-// GetIncidentRole returns a single incident role.
+// Get returns a single incident role.
 //
 // id represents the unique identifier for the incident role
 //
 // API docs: https://api-docs.incident.io/#operation/Incident%20Roles_Show
-func (s *IncidentRolesService) GetIncidentRole(ctx context.Context, id string) (*IncidentRoleResponse, *Response, error) {
+func (s *IncidentRolesService) Get(ctx context.Context, id string) (*IncidentRoleResponse, *Response, error) {
 	u := fmt.Sprintf("incident_roles/%s", id)
 
 	req, err := s.client.NewRequest("GET", u, nil)

@@ -11,10 +11,10 @@ import (
 // API docs: https://api-docs.incident.io/#tag/Severities
 type SeveritiesService service
 
-// ListSeverities list all incident severities for an organisation.
+// List list all incident severities for an organisation.
 //
 // API docs: https://api-docs.incident.io/#operation/Severities_List
-func (s *SeveritiesService) ListSeverities(ctx context.Context) (*SeveritiesList, *Response, error) {
+func (s *SeveritiesService) List(ctx context.Context) (*SeveritiesList, *Response, error) {
 	u := "severities"
 
 	req, err := s.client.NewRequest("GET", u, nil)
@@ -31,12 +31,12 @@ func (s *SeveritiesService) ListSeverities(ctx context.Context) (*SeveritiesList
 	return v, resp, nil
 }
 
-// GetSeverity returns a single incident severity.
+// Get returns a single incident severity.
 //
 // id represents the unique identifier for the severity
 //
 // API docs: https://api-docs.incident.io/#operation/Severities_Show
-func (s *SeveritiesService) GetSeverity(ctx context.Context, id string) (*SeverityResponse, *Response, error) {
+func (s *SeveritiesService) Get(ctx context.Context, id string) (*SeverityResponse, *Response, error) {
 	u := fmt.Sprintf("severities/%s", id)
 
 	req, err := s.client.NewRequest("GET", u, nil)

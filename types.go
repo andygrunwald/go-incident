@@ -53,7 +53,7 @@ const (
 	ActionStatusOutstanding = "outstanding"
 )
 
-// IncidentsListOptions defines parameters for IncidentsService.ListIncidents.
+// IncidentsListOptions defines parameters for IncidentsService.List.
 type IncidentsListOptions struct {
 	// Number of records to return
 	PageSize int `url:"page_size,omitempty"`

@@ -13,7 +13,7 @@ func main() {
 	client := incident.NewClient(apiKey, nil)
 
 	// List severities
-	v, resp, err := client.Severities.ListSeverities(context.Background())
+	v, resp, err := client.Severities.List(context.Background())
 	if err != nil {
 		panic(err)
 	}
@@ -27,7 +27,7 @@ func main() {
 	fmt.Println("========================")
 
 	// Get a single severity
-	v1, resp, err := client.Severities.GetSeverity(context.Background(), "<Severity-ID>")
+	v1, resp, err := client.Severities.Get(context.Background(), "<Severity-ID>")
 	if err != nil {
 		panic(err)
 	}

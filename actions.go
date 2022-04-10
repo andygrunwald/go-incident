@@ -11,10 +11,10 @@ import (
 // API docs: https://api-docs.incident.io/#tag/Actions
 type ActionsService service
 
-// ListActions list all actions for an organisation.
+// List list all actions for an organisation.
 //
 // API docs: https://api-docs.incident.io/#operation/Actions_List
-func (s *ActionsService) ListActions(ctx context.Context, opts *ActionsListOptions) (*ActionsList, *Response, error) {
+func (s *ActionsService) List(ctx context.Context, opts *ActionsListOptions) (*ActionsList, *Response, error) {
 	u := "actions"
 	u, err := addOptions(u, opts)
 	if err != nil {
@@ -35,12 +35,12 @@ func (s *ActionsService) ListActions(ctx context.Context, opts *ActionsListOptio
 	return v, resp, nil
 }
 
-// GetCustomField returns a single action.
+// Get returns a single action.
 //
 // id represents the unique identifier for the action
 //
 // API docs: https://api-docs.incident.io/#operation/Actions_Show
-func (s *ActionsService) GetAction(ctx context.Context, id string) (*ActionResponse, *Response, error) {
+func (s *ActionsService) Get(ctx context.Context, id string) (*ActionResponse, *Response, error) {
 	u := fmt.Sprintf("actions/%s", id)
 
 	req, err := s.client.NewRequest("GET", u, nil)

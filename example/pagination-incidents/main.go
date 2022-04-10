@@ -24,7 +24,7 @@ func main() {
 	var allIncidents []incident.Incident
 	for {
 		fmt.Printf("Requesting incidents - After ID: %s\n", opt.After)
-		incidents, _, err := client.Incidents.ListIncidents(context.Background(), opt)
+		incidents, _, err := client.Incidents.List(context.Background(), opt)
 		if err != nil {
 			panic(err)
 		}

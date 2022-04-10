@@ -13,7 +13,7 @@ func main() {
 	client := incident.NewClient(apiKey, nil)
 
 	// List custom fields
-	v, resp, err := client.CustomFields.ListCustomFields(context.Background())
+	v, resp, err := client.CustomFields.List(context.Background())
 	if err != nil {
 		panic(err)
 	}
@@ -27,7 +27,7 @@ func main() {
 	fmt.Println("========================")
 
 	// Get a single custom field
-	v1, resp, err := client.CustomFields.GetCustomField(context.Background(), "<Custom-Field-ID>")
+	v1, resp, err := client.CustomFields.Get(context.Background(), "<Custom-Field-ID>")
 	if err != nil {
 		panic(err)
 	}

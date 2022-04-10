@@ -42,7 +42,7 @@ apiKey := "<my-secret-api-key>"
 client := incident.NewClient(apiKey, nil)
 
 // List all incidents for your organisation.
-incidents, response, err := c.Incidents.ListIncidents(context.Background(), nil)
+incidents, response, err := c.Incidents.List(context.Background(), nil)
 ```
 
 Some API methods have optional parameters that can be passed. For example:
@@ -58,7 +58,7 @@ opt := &incident.IncidentsListOptions{
         incident.IncidentStatusClosed,
     },
 }
-incidents, response, err := c.Incidents.ListIncidents(context.Background(), opt)
+incidents, response, err := c.Incidents.List(context.Background(), opt)
 ```
 
 The services of a client divide the API into logical chunks and correspond to the structure of the [Incident.io API](https://api-docs.incident.io/) documentation .
@@ -116,7 +116,7 @@ opt := &incident.IncidentsListOptions{
 // Get all pages of incidents
 var allIncidents []incident.Incident
 for {
-    incidents, _, err := client.Incidents.ListIncidents(context.Background(), opt)
+    incidents, _, err := client.Incidents.List(context.Background(), opt)
     if err != nil {
         panic(err)
     }

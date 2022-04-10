@@ -13,7 +13,7 @@ func main() {
 	client := incident.NewClient(apiKey, nil)
 
 	// List incident roles
-	v, resp, err := client.IncidentRoles.ListIncidentRoles(context.Background())
+	v, resp, err := client.IncidentRoles.List(context.Background())
 	if err != nil {
 		panic(err)
 	}
@@ -27,7 +27,7 @@ func main() {
 	fmt.Println("========================")
 
 	// Get a single incident role
-	v1, resp, err := client.IncidentRoles.GetIncidentRole(context.Background(), "<Role-ID>")
+	v1, resp, err := client.IncidentRoles.Get(context.Background(), "<Role-ID>")
 	if err != nil {
 		panic(err)
 	}
