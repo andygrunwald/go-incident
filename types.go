@@ -89,7 +89,7 @@ type Incident struct {
 
 	// Reference to this incident, as displayed across the product
 	Reference string   `json:"reference"`
-	Reporter  Actor    `json:"reporter"`
+	Creator   Actor    `json:"creator"`
 	Severity  Severity `json:"severity"`
 
 	// ID of the Slack channel in the organisation Slack workspace
