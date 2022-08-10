@@ -339,8 +339,10 @@ type ActionsListOptions struct {
 	// Filter to actions marked as being follow up actions
 	IsFollowUp bool `url:"is_follow_up,omitempty"`
 
-	// Don't return actions attached to test incidents
-	ExcludeTestIncidents bool `url:"exclude_test_incidents,omitempty"`
+	// Filter to actions from incidents of the given mode.
+	// If not set, only actions from real incidents are returned
+	// Enum: "real" "test" "tutorial"
+	IncidentMode string `url:"incident_mode,omitempty"`
 }
 
 type ActionsList struct {
