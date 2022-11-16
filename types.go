@@ -197,6 +197,12 @@ type User struct {
 
 	// Role of the user
 	Role string `json:"role"`
+
+	// Email of the user
+	Email string `json:"email"`
+
+	// Slack User ID of the user
+	SlackUserID string `json:"slack_user_id"`
 }
 
 type IncidentRole struct {
