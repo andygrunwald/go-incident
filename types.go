@@ -380,6 +380,9 @@ type Action struct {
 
 	// When the action was last updated
 	UpdatedAt time.Time `json:"updated_at"`
+
+	// Assignee of the action
+	Assignee *User `json:"assignee,omitempty"`
 }
 
 type ExternalIssueReference struct {
