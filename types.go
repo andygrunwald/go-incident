@@ -192,7 +192,7 @@ type CatalogEntry struct {
 	ID string `json:"id"`
 
 	// External identifier from the source system
-	ExternalID string `json:"external_id"`
+	ExternalID string `json:"external_id,omitempty"`
 
 	// Human readable name of the catalog entry
 	Name string `json:"name"`
