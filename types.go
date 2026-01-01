@@ -181,6 +181,24 @@ type CustomFieldValue struct {
 
 	// Text value
 	ValueText string `json:"value_text,omitempty"`
+
+	// Catalog entry value
+	ValueCatalogEntry *CatalogEntry `json:"value_catalog_entry,omitempty"`
+}
+
+// CatalogEntry represents a catalog entry value for custom fields
+type CatalogEntry struct {
+	// Unique identifier for the catalog entry
+	ID string `json:"id"`
+
+	// External identifier from the source system
+	ExternalID string `json:"external_id,omitempty"`
+
+	// Human readable name of the catalog entry
+	Name string `json:"name"`
+
+	// Alternative names for the catalog entry
+	Aliases []string `json:"aliases,omitempty"`
 }
 
 type IncidentRoleAssignment struct {
